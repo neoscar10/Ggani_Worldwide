@@ -78,9 +78,9 @@
                   $status = '';
                   $payment_staus = '';
                   if($order->status == 'new'){
-                      $status = '<span class="bg-orange-500 py-1 px-3 rounded text-white shadow">New</span>';
+                      $status = '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">New</span>';
                   }if($order->status == 'processing'){
-                    $status = '<span class="bg-orange-400 py-1 px-3 rounded text-white shadow">Processing</span>';
+                    $status = '<span class="bg-green-400 py-1 px-3 rounded text-white shadow">Processing</span>';
                   }if($order->status == 'cancelled'){
                     $status = '<span class="bg-red-500 py-1 px-3 rounded text-white shadow">Cancelled</span>';
                   }if($order->status == 'delivered'){
@@ -88,7 +88,7 @@
                   }
 
                   if($order->payment_status == 'pending'){
-                    $payment_staus = '<span class="bg-orange-400 py-1 px-3 rounded text-white shadow">Pending</span>';
+                    $payment_staus = '<span class="bg-green-400 py-1 px-3 rounded text-white shadow">Pending</span>';
                   }
                   if($order->payment_status == 'paid'){
                     $payment_staus = '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">Paid</span>';
@@ -155,11 +155,11 @@
                     <span class="font-semibold">{{$item->product->name}}</span>
                   </div>
                 </td>
-                <td class="py-4">₦{{number_format($item['unit_amount'], 0)}}</td>
+                <td class="py-4">${{number_format($item['unit_amount'], 0)}}</td>
                 <td class="py-4">
                   <span class="text-center w-8">{{$item->quantity}}</span>
                 </td>
-                <td class="py-4">₦{{number_format($item['total_amount'], 0)}}</td>
+                <td class="py-4">${{number_format($item['total_amount'], 0)}}</td>
               </tr>
               @endforeach
               
@@ -188,7 +188,7 @@
           <h2 class="text-lg font-semibold mb-4">Summary</h2>
           <div class="flex justify-between mb-2">
             <span>Subtotal</span>
-            <span>₦{{number_format($order->grand_total, 0)}}</span>
+            <span>${{number_format($order->grand_total, 0)}}</span>
           </div>
           {{-- <div class="flex justify-between mb-2">
             <span>Taxes</span>
@@ -196,12 +196,12 @@
           </div> --}}
           <div class="flex justify-between mb-2">
             <span>Shipping</span>
-            <span>₦0.00</span>
+            <span>$0.00</span>
           </div>
           <hr class="my-2">
           <div class="flex justify-between mb-2">
             <span class="font-semibold">Order Total</span>
-            <span class="font-semibold">₦{{number_format($order->grand_total, 0)}}</span>
+            <span class="font-semibold">${{number_format($order->grand_total, 0)}}</span>
           </div>
   
         </div>

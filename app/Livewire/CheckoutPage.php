@@ -50,7 +50,7 @@ class CheckoutPage extends Component
         foreach($cart_items as $item){
             $line_items[] = [
                 'price_data' => [
-                    'currency' => 'ngn',
+                    'currency' => 'usd',
                     'unit_amount' =>$item['unit_amount'] * 100,
                     'product_data' => [
                         'name' => $item['name'],

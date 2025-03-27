@@ -11,7 +11,7 @@
               <div class="flex-wrap hidden md:flex ">
                 @foreach ($product->images as $image)
                   <div class="w-1/2 p-2 sm:w-1/4" x-on:click="mainImage='{{url('storage', $image)}}'">
-                    <img src="{{url('storage', $image)}}" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-orange-500">
+                    <img src="{{url('storage', $image)}}" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-green-500">
                   </div>
                 @endforeach
   
@@ -35,7 +35,7 @@
                 <h2 class="max-w-xl mb-6 text-2xl font-bold  md:text-4xl">
                   {{$product->name}}</h2>
                 <p class="inline-block mb-6 text-4xl font-bold text-gray-700  ">
-                  <span>₦{{number_format($product->price, 0)}}</span>
+                  <span>${{number_format($product->price, 0)}}</span>
                   {{-- DISCOUNT PRICE --}}
                   {{-- <span class="text-base font-normal text-gray-500 line-through ">$1800.99</span> --}}
                 </p>
@@ -44,7 +44,7 @@
                 </p>
               </div>
               <div class="w-32 mb-8 ">
-                <label for="" class="w-full pb-1 text-xl font-semibold text-gray-700 border-b border-orange-300 ">Quantity</label>
+                <label for="" class="w-full pb-1 text-xl font-semibold text-gray-700 border-b border-green-300 ">Quantity</label>
                 <div class="relative flex flex-row w-full h-10 mt-6 bg-transparent rounded-lg">
                   <button wire:click="decreaseQty" class="w-20 h-full text-gray-600 bg-gray-300 rounded-l outline-none cursor-pointer  hover:text-gray-700 hover:bg-gray-400">
                     <span class="m-auto text-2xl font-thin">-</span>
@@ -57,7 +57,7 @@
               </div>
               <div class="flex flex-wrap items-center gap-4">
                 <button wire:click="addToCart({{ $product->id }})" 
-                    class="w-full p-4 bg-orange-500 rounded-md lg:w-2/5  text-gray-50 hover:bg-orange-600 relative flex justify-center items-center">
+                    class="w-full p-4 bg-green-500 rounded-md lg:w-2/5  text-gray-50 hover:bg-green-600 relative flex justify-center items-center">
                     <!-- Default Text -->
                     <span wire:loading.remove wire:target="addToCart({{ $product->id }})">Add to cart</span> 
                     <!-- Loading Animation -->

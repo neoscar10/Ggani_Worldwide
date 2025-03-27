@@ -10,7 +10,7 @@
                 <div class="flex items-center">
                 <img class="h-[5rem] w-[5rem]" src="{{url('storage', $category->image)}}" alt="Image Description">
                 <div class="ms-3">
-                    <h3 class="group-hover:text-orange-600 text-2xl font-semibold text-gray-800">
+                    <h3 class="group-hover:text-green-600 text-2xl font-semibold text-gray-800">
                     {{$category->name}}
                     </h3>
                 </div>

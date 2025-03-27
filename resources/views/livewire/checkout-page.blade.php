@@ -107,7 +107,7 @@
 					<ul class="grid w-full gap-6 md:grid-cols-2">
 						<li>
 							<input wire:model="payment_method" class="hidden peer" id="hosting-small" required="" type="radio" value="cod" />
-							<label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-orange-600 peer-checked:text-orange-600 hover:text-gray-600 hover:bg-gray-100 " for="hosting-small">
+							<label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-green-600 peer-checked:text-green-600 hover:text-gray-600 hover:bg-gray-100 " for="hosting-small">
 								<div class="block">
 									<div class="w-full text-lg font-semibold">
 										Cash on Delivery
@@ -121,7 +121,7 @@
 						</li>
 						<li>
 							<input wire:model="payment_method" class="hidden peer" id="hosting-big" type="radio" value="stripe">
-							<label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer  peer-checked:border-orange-600 peer-checked:text-orange-600 hover:text-gray-600 hover:bg-gray-100" for="hosting-big">
+							<label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer  peer-checked:border-green-600 peer-checked:text-green-600 hover:text-gray-600 hover:bg-gray-100" for="hosting-big">
 								<div class="block">
 									<div class="w-full text-lg font-semibold ">
 										Stripe
@@ -151,7 +151,7 @@
 							Subtotal
 						</span>
 						<span>
-							₦{{number_format($grand_total, 0)}}
+							${{number_format($grand_total, 0)}}
 						</span>
 					</div>
 					{{-- <div class="flex justify-between mb-2 font-bold">
@@ -176,7 +176,7 @@
 							Grand Total
 						</span>
 						<span>
-							₦{{number_format($grand_total, 0)}}
+							${{number_format($grand_total, 0)}}
 						</span>
 					</div>
 					</hr>
@@ -205,7 +205,7 @@
 										</p>
 									</div>
 									<div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-										₦{{number_format($item['total_amount'], 0)}}
+										${{number_format($item['total_amount'], 0)}}
 									</div>
 								</div>
 							</li>

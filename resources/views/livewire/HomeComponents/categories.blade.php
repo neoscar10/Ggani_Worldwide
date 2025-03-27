@@ -1,15 +1,15 @@
-<div class="bg-orange-200 py-20">
+<div class="bg-green-200 py-20">
     <div class="max-w-xl mx-auto">
       <div class="text-center ">
         <div class="relative flex flex-col items-center">
-          <h1 class="text-5xl font-bold "> Browse <span class="text-orange-500"> Categories
+          <h1 class="text-5xl font-bold "> Browse <span class="text-green-500"> Categories
             </span> </h1>
           <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
-            <div class="flex-1 h-2 bg-orange-200">
+            <div class="flex-1 h-2 bg-green-200">
             </div>
-            <div class="flex-1 h-2 bg-orange-400">
+            <div class="flex-1 h-2 bg-green-400">
             </div>
-            <div class="flex-1 h-2 bg-orange-600">
+            <div class="flex-1 h-2 bg-green-600">
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
               <div class="flex items-center">
                 <img class="h-[2.375rem] w-[2.375rem] rounded-full" src="{{url('storage', $category->image)}}" alt="{{$category->name}}">
                 <div class="ms-3">
-                  <h3 class="group-hover:text-orange-600 font-semibold text-gray-">
+                  <h3 class="group-hover:text-green-600 font-semibold text-gray-">
                     {{$category->name}}
                   </h3>
                 </div>

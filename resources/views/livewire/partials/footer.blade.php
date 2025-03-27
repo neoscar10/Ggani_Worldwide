@@ -3,7 +3,7 @@
     <!-- Grid -->
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
       <div class="col-span-full lg:col-span-1">
-        <a class="flex-none text-xl font-semibold text-white   " href="#" aria-label="Brand">gadjo</a>
+        <a class="flex-none text-xl font-semibold text-white   " href="#" aria-label="Brand">Ggani-worldwide</a>
       </div>
       <!-- End Col -->
 
@@ -36,9 +36,9 @@
         <form>
           <div class="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 bg-white rounded-lg p-2 ">
             <div class="w-full">
-              <input type="text" id="hero-input" name="hero-input" class="py-3 px-4 block w-full border-transparent rounded-lg text-sm focus:border-orange-500 focus:ring-orange-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Enter your email">
+              <input type="text" id="hero-input" name="hero-input" class="py-3 px-4 block w-full border-transparent rounded-lg text-sm focus:border-green-500 focus:ring-green-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Enter your email">
             </div>
-            <a class="w-full sm:w-auto whitespace-nowrap p-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-orange-600 text-white hover:bg-orange-700 disabled:opacity-50 disabled:pointer-events-none   " href="#">
+            <a class="w-full sm:w-auto whitespace-nowrap p-3 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-green-600 text-white hover:bg-green-700 disabled:opacity-50 disabled:pointer-events-none   " href="#">
               Subscribe
             </a>
           </div>
@@ -51,7 +51,7 @@
 
     <div class="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
       <div class="flex justify-between items-center">
-        <p class="text-sm text-gray-400">© 2025 gadjo. All rights reserved.</p>
+        <p class="text-sm text-gray-400">© 2025 Ggani-worldwide. All rights reserved.</p>
       </div>
       <!-- End Col -->
 

@@ -21,9 +21,9 @@
                     $status = '';
                     $payment_staus='';
                     if($order->status == 'new'){
-                      $status = '<span class="bg-orange-500 py-1 px-3 rounded text-white shadow">New</span>';
+                      $status = '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">New</span>';
                     }if($order->status == 'processing'){
-                      $status = '<span class="bg-orange-400 py-1 px-3 rounded text-white shadow">Processing</span>';
+                      $status = '<span class="bg-green-400 py-1 px-3 rounded text-white shadow">Processing</span>';
                     }if($order->status == 'cancelled'){
                       $status = '<span class="bg-red-500 py-1 px-3 rounded text-white shadow">Cancelled</span>';
                     }if($order->status == 'delivered'){
@@ -31,7 +31,7 @@
                     }
 
                     if($order->payment_status == 'pending'){
-                      $payment_staus = '<span class="bg-orange-400 py-1 px-3 rounded text-white shadow">Pending</span>';
+                      $payment_staus = '<span class="bg-green-400 py-1 px-3 rounded text-white shadow">Pending</span>';
                     }
                     if($order->payment_status == 'paid'){
                       $payment_staus = '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">Paid</span>';

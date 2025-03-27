@@ -25,12 +25,12 @@
                     <span class="font-semibold">{{$item['name']}}</span>
                   </div>
                 </td>
-                <td class="py-4">₦{{number_format($item['unit_amount'], 0)}}</td>
+                <td class="py-4">${{number_format($item['unit_amount'], 0)}}</td>
                 <td class="py-4">
                   <div class="flex items-center">
                     <button wire:click='decreaseQty({{ $item["product_id"] }})'
                       wire:loading.attr="disabled"
-                      class="border border-gray-400 rounded-md w-8 h-8 flex items-center justify-center hover:bg-red-500 hover:text-white">
+                      class="border border-gray-400 rounded-md w-8 h-8 flex items-center justify-center hover:bg-green-500 hover:text-white">
                       -
                     </button>
                     <span class="text-center w-8">{{ $item["quantity"] }}</span>
@@ -41,10 +41,10 @@
                     </button>
                   </div>
                 </td>
-                <td class="py-4">₦{{number_format($item['total_amount'], 0)}}</td>
+                <td class="py-4">${{number_format($item['total_amount'], 0)}}</td>
                 <td>
                   <button wire:click="removeItem({{ $item['product_id'] }})"
-                    class="bg-slate-300 border-2 border-slate-400 rounded-lg px-3 py-1 hover:bg-red-500 hover:text-white hover:border-red-700">
+                    class="bg-slate-300 border-2 border-slate-400 rounded-lg px-3 py-1 hover:bg-red-500 hover:text-white hover:border-green-700">
                     Remove
                   </button>
                 </td>
@@ -69,11 +69,11 @@
               
               <!-- Second Row: Price and Quantity Controls -->
               <div class="flex justify-between items-center mt-3">
-                <span class="text-gray-700 font-medium">₦{{number_format($item['unit_amount'], 0)}}</span>
+                <span class="text-gray-700 font-medium">${{number_format($item['unit_amount'], 0)}}</span>
                 <div class="flex items-center space-x-2">
                   <button wire:click='decreaseQty({{ $item["product_id"] }})'
                     wire:loading.attr="disabled"
-                    class="border border-gray-400 rounded-md w-8 h-8 flex items-center justify-center hover:bg-red-500 hover:text-white">
+                    class="border border-gray-400 rounded-md w-8 h-8 flex items-center justify-center hover:bg-green-500 hover:text-white">
                     -
                   </button>
                   <span class="text-center w-8">{{ $item["quantity"] }}</span>
@@ -87,7 +87,7 @@
               
               <!-- Third Row: Total and Remove Button -->
               <div class="flex justify-between items-center mt-3">
-                <span class="text-gray-900 font-semibold">Total: ₦{{number_format($item['total_amount'], 0)}}</span>
+                <span class="text-gray-900 font-semibold">Total: ${{number_format($item['total_amount'], 0)}}</span>
                 <button wire:click="removeItem({{ $item['product_id'] }})"
                   class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600">
                   Remove
@@ -107,19 +107,19 @@
           <h2 class="text-lg font-semibold mb-4">Summary</h2>
           <div class="flex justify-between mb-2">
             <span>Subtotal</span>
-            <span>₦{{number_format($grand_total, 0)}}</span>
+            <span>${{number_format($grand_total, 0)}}</span>
           </div>
           <div class="flex justify-between mb-2">
             <span>Shipping</span>
-            <span>₦{{number_format(0, 2)}}</span>
+            <span>${{number_format(0, 2)}}</span>
           </div>
           <hr class="my-2">
           <div class="flex justify-between mb-2">
             <span class="font-semibold">Total</span>
-            <span class="font-semibold">₦{{number_format($grand_total, 0)}}</span>
+            <span class="font-semibold">${{number_format($grand_total, 0)}}</span>
           </div>
           @if ($cart_items)
-          <a href="/checkout" class="bg-orange-500 text-white block text-center py-2 px-4 rounded-lg mt-4 w-full">
+          <a href="/checkout" class="bg-green-500 text-white block text-center py-2 px-4 rounded-lg mt-4 w-full">
             Checkout
           </a>
           @endif

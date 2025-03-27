@@ -95,12 +95,11 @@ class OrderResource extends Resource
 
                         Select::make('currency')
                         ->options([
-                            'ngn' => 'NGN',
                             'usd' => 'USD',
                             'gbp' => 'GBP',
                             'inr' => 'INR',
                         ])
-                        ->default('ngn')
+                        ->default('usd')
                         ->required(),
 
                         Select::make('shipping_method')
@@ -174,7 +173,7 @@ class OrderResource extends Resource
                             $total += $get("items.{$key}.total_amount");
                         }
                         $set("grand_total", $total);
-                        return Number::currency($total, "NGN");
+                        return Number::currency($total, "USD");
                     }),
                     Hidden::make('grand_total')
                     ->default(0)
@@ -197,7 +196,7 @@ class OrderResource extends Resource
             ColumnsTextColumn::make('grand_total')
             ->numeric()
             ->sortable()
-            ->money('NGN'),
+            ->money('USD'),
             
             ColumnsTextColumn::make('payment_method')
             ->sortable()
