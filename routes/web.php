@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\OrderController;
-
+use App\Livewire\Booking;
+use App\Http\Controllers\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,13 +53,18 @@ Route::middleware('auth')->group(function () {
         Auth::logout();
         return redirect('/');
     });
-
     Route::get('/checkout', CheckoutPage::class);
     Route::get('my-orders', MyOrdersPage::class);
     Route::get('my-orders/{order_id}', MyOrderDetailPage::class)->name('my-order.show');
     Route::get('/success', SuccessPage::class)->name('success');
     Route::get('/cancel', CancelPage::class)->name('cancel');
+    Route::get('/booking', Booking::class)->name('booking');
+    // Booking success and cance routes
+    Route::get('/booking/success/{booking}', [BookingController::class, 'success'])->name('booking.success');
+    Route::get('/booking/cancel', [BookingController::class, 'cancel'])->name('booking.cancel');
 });
 
 Route::get('/orders/{id}/receipt', [OrderController::class, 'downloadReceipt'])->name('orders.receipt');
+
+
 

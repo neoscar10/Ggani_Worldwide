@@ -52,6 +52,40 @@ namespace App\Models{
  * 
  *
  * @property int $id
+ * @property int|null $user_id
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $phone
+ * @property string|null $email
+ * @property int $slot_id
+ * @property string $payment_method
+ * @property string $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\TimeSlot $slot
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking whereFirstName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking whereLastName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking wherePaymentMethod($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking whereSlotId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking whereUserId($value)
+ */
+	class Booking extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
  * @property string $name
  * @property string $slug
  * @property string $image
@@ -215,6 +249,27 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Product whereBrandId($value)
  */
 	class Product extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $slot_datetime
+ * @property string $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|TimeSlot newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|TimeSlot newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|TimeSlot query()
+ * @method static \Illuminate\Database\Eloquent\Builder|TimeSlot whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TimeSlot whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TimeSlot whereSlotDatetime($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TimeSlot whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TimeSlot whereUpdatedAt($value)
+ */
+	class TimeSlot extends \Eloquent {}
 }
 
 namespace App\Models{

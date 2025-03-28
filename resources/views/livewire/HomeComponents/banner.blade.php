@@ -18,7 +18,7 @@
               <path d="m9 18 6-6-6-6" />
             </svg>
           </a>
-          <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="">
+          <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="{{url('/booking')}}">
             Book a Consultation
           </a>
         </div>

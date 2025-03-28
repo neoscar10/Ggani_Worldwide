@@ -2,13 +2,7 @@
 	<h1 class="text-2xl font-bold text-gray-800  mb-4">
 		Checkout
 	</h1>
-	{{-- <form method="POST" wire:submit.prevent="save(Object.fromEntries(new FormData($event.target)))">
-    	<input name="username" class="w-full rounded-lg border py-2 px-3 ">
-    	<input name="email" class="w-full rounded-lg border py-2 px-3 ">
-    	<input name="phone" class="w-full rounded-lg border py-2 px-3 ">
-    	<input name="password" class="w-full rounded-lg border py-2 px-3 ">
-		<button class="">SUBMIT></button>
-	</form> --}}
+
 	<form wire:submit.prevent="placeOrder">
 		<div class="grid grid-cols-12 gap-4">
 			<div class="md:col-span-12 lg:col-span-8 col-span-12">
