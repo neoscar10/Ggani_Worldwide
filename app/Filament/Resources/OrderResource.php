@@ -244,8 +244,16 @@ class OrderResource extends Resource
                     Tables\Actions\EditAction::make(),
                     Tables\Actions\ViewAction::make(),
                     Tables\Actions\DeleteAction::make(),
+            
+                    // New Action: Download PDF
+                    Tables\Actions\Action::make('download_pdf')
+                        ->label('Download PDF')
+                        ->icon('heroicon-o-arrow-down-tray')
+                        ->color('primary')
+                        ->url(fn ($record) => route('orders.receipt', $record->id))
+                        ->openUrlInNewTab(), // Ensures the PDF opens in a new tab
                 ])
-            ])
+            ])            
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),

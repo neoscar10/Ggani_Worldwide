@@ -106,11 +106,11 @@
 					</div>
 					<ul class="grid w-full gap-6 md:grid-cols-2">
 						<li>
-							<input wire:model="payment_method" class="hidden peer" id="hosting-small" required="" type="radio" value="cod" />
+							<input wire:model="payment_method" class="hidden peer" id="hosting-small" required="" type="radio" value="paypal" />
 							<label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-green-600 peer-checked:text-green-600 hover:text-gray-600 hover:bg-gray-100 " for="hosting-small">
 								<div class="block">
 									<div class="w-full text-lg font-semibold">
-										Cash on Delivery
+										Paypal
 									</div>
 								</div>
 								<svg aria-hidden="true" class="w-5 h-5 ms-3 rtl:rotate-180" fill="none" viewbox="0 0 14 10" xmlns="http://www.w3.org/2000/svg">
@@ -124,7 +124,7 @@
 							<label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer  peer-checked:border-green-600 peer-checked:text-green-600 hover:text-gray-600 hover:bg-gray-100" for="hosting-big">
 								<div class="block">
 									<div class="w-full text-lg font-semibold ">
-										Stripe
+										Credit Card (Stripe)
 									</div>
 								</div>
 								<svg aria-hidden="true" class="w-5 h-5 ms-3 rtl:rotate-180" fill="none" viewbox="0 0 14 10" xmlns="http://www.w3.org/2000/svg">

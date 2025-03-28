@@ -18,6 +18,9 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\OrderController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,4 +59,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/success', SuccessPage::class)->name('success');
     Route::get('/cancel', CancelPage::class)->name('cancel');
 });
+
+Route::get('/orders/{id}/receipt', [OrderController::class, 'downloadReceipt'])->name('orders.receipt');
 
