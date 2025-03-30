@@ -4,14 +4,19 @@
       
       <!-- Logo & Mobile Menu -->
       <div class="flex items-center justify-between w-full md:w-auto">
-        <a wire:navigate class="text-xl font-bold text-gray-800" href="/" aria-label="Brand">Ggani</a>
+        <a wire:navigate class="flex items-center space-x-2 text-lg font-bold text-gray-800" href="/" aria-label="Brand">
+            <img src="{{ url('storage', 'ggani-logo.jpg') }}" alt="Ggani Logo" class="h-14 w-14 rounded-full object-contain">
+            <span class="whitespace-nowrap px-2">Ggani-Worldwide</span>
+        </a>
         <div class="md:hidden">
-          <button type="button" class="hs-collapse-toggle flex justify-center items-center w-9 h-9 text-gray-800 border border-gray-300 rounded-md hover:bg-gray-100"
-            data-hs-collapse="#navbar-collapse-with-animation">
-            ☰
-          </button>
+            <button type="button" class="hs-collapse-toggle flex justify-center items-center w-9 h-9 text-gray-800 border border-gray-300 rounded-md hover:bg-gray-100"
+                data-hs-collapse="#navbar-collapse-with-animation">
+                ☰
+            </button>
         </div>
-      </div>
+    </div>
+    
+    
 
       <!-- Navigation -->
       <div id="navbar-collapse-with-animation" class="hs-collapse hidden transition-all duration-300 basis-full grow md:block">

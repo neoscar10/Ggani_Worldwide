@@ -49,6 +49,7 @@ class Booking extends Component
             'slot_id' => $this->selected_slot,
             'payment_method' => $this->payment_method,
             'status' => 'pending',
+            'pa'
         ]);
 
         // Mark slot as booked

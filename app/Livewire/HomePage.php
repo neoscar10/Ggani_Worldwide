@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class HomePage extends Component
 {
-    #[Title('Home Page-gadjo')]
+    #[Title('Home Page-Ggani')]
     public function render()
     {
         $brands = Brand::where('is_active', 1)->get();

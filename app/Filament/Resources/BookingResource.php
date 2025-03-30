@@ -49,77 +49,99 @@ class BookingResource extends Resource
                         'pending' => 'Pending',
                         'paid' => 'Paid',
                         'cancelled' => 'Cancelled',
-                        
                     ])
+                    ->required(),
+                Select::make('appointment_status') // New appointment status field
+                    ->label('Appointment Status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'completed' => 'Completed',
+                        'cancelled' => 'Cancelled',
+                    ])
+                    ->default('pending')
                     ->required(),
                 Textarea::make('notes')->nullable(),
             ]);
     }
 
     public static function table(Table $table): Table
-{
-    return $table
-        ->columns([
-            Tables\Columns\TextColumn::make('first_name')
-                ->sortable()
-                ->searchable(),
-            Tables\Columns\TextColumn::make('last_name')
-                ->sortable()
-                ->searchable(),
-            Tables\Columns\TextColumn::make('phone')
-                ->searchable(),
-            Tables\Columns\TextColumn::make('email')
-                ->searchable(),
-            Tables\Columns\TextColumn::make('slot.slot_datetime')
-                ->label('Appointment Date')
-                ->sortable()
-                ->dateTime('l, F j, Y g:i A'),
-            Tables\Columns\TextColumn::make('payment_method')
-                ->label('Payment Method')
-                ->formatStateUsing(fn ($state) => match ($state) {
-                    'stripe' => 'Stripe Payment',
-                    'paypal' => 'PayPal Payment',
-                    'cash' => 'Pay at Appointment',
-                    default => 'Unknown',
-                })
-                ->color(fn ($state) => match ($state) {
-                    'stripe' => 'success',
-                    'paypal' => 'info',
-                    'cash' => 'warning',
-                    default => 'gray',
-                }),
-            Tables\Columns\TextColumn::make('status')
-                ->label('Status')
-                ->formatStateUsing(fn ($state) => ucfirst($state))
-                ->color(fn ($state) => match ($state) {
-                    'pending' => 'danger',
-                    'paid' => 'success',
-                    default => 'gray',
-                }),
-            Tables\Columns\TextColumn::make('created_at')
-                ->label('Booked On')
-                ->dateTime('F j, Y g:i A')
-                ->sortable(),
-        ])
-        ->defaultSort('created_at', 'desc') // Sort by latest bookings first
-        ->filters([
-            Tables\Filters\SelectFilter::make('status')
-                ->options([
-                    'pending' => 'Pending',
-                    'paid' => 'Paid',
-                ]),
-        ])
-        ->actions([
-            Tables\Actions\EditAction::make(),
-            Tables\Actions\DeleteAction::make(),
-        ])
-        ->bulkActions([
-            Tables\Actions\DeleteBulkAction::make(),
-        ]);
-}
-
-    
-
+    {
+        return $table
+            ->columns([
+                Tables\Columns\TextColumn::make('first_name')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('last_name')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('phone')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('slot.slot_datetime')
+                    ->label('Appointment Date')
+                    ->sortable()
+                    ->dateTime('l, F j, Y g:i A'),
+                Tables\Columns\TextColumn::make('payment_method')
+                    ->label('Payment Method')
+                    ->formatStateUsing(fn ($state) => match ($state) {
+                        'stripe' => 'Stripe Payment',
+                        'paypal' => 'PayPal Payment',
+                        'cash' => 'Pay at Appointment',
+                        default => 'Unknown',
+                    })
+                    ->color(fn ($state) => match ($state) {
+                        'stripe' => 'success',
+                        'paypal' => 'info',
+                        'cash' => 'warning',
+                        default => 'gray',
+                    }),
+                Tables\Columns\TextColumn::make('status')
+                    ->label('Status')
+                    ->formatStateUsing(fn ($state) => ucfirst($state))
+                    ->color(fn ($state) => match ($state) {
+                        'pending' => 'danger',
+                        'paid' => 'success',
+                        'cancelled' => 'gray',
+                        default => 'gray',
+                    }),
+                BadgeColumn::make('appointment_status') // New column for appointment status
+                    ->label('Appointment Status')
+                    ->sortable()
+                    ->colors([
+                        'danger' => 'pending',
+                        'success' => 'completed',
+                        'gray' => 'cancelled',
+                    ]),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Booked On')
+                    ->dateTime('F j, Y g:i A')
+                    ->sortable(),
+            ])
+            ->defaultSort('created_at', 'desc') // Sort by latest bookings first
+            ->filters([
+                Tables\Filters\SelectFilter::make('status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'paid' => 'Paid',
+                        'cancelled' => 'Cancelled',
+                    ]),
+                Tables\Filters\SelectFilter::make('appointment_status') // New filter for appointment status
+                    ->label('Appointment Status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'completed' => 'Completed',
+                        'cancelled' => 'Cancelled',
+                    ]),
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\DeleteBulkAction::make(),
+            ]);
+    }
 
     public static function getRelations(): array
     {

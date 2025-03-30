@@ -9,7 +9,7 @@ use Livewire\Component;
 use Stripe\Checkout\Session;
 use Stripe\Stripe;
 
-#[Title("Success Page - gadjo")]
+#[Title("Success Page - Ggani")]
 
 class SuccessPage extends Component
 {

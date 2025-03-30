@@ -11,6 +11,7 @@ use App\Livewire\CheckoutPage;
 use App\Livewire\HomePage;
 use App\Livewire\MyOrderDetailPage;
 use App\Livewire\MyOrdersPage;
+use App\Livewire\Pages\UserAppointments;
 use App\Livewire\ProductDetailPage;
 use App\Livewire\ProductsPage;
 use App\Livewire\SuccessPage;
@@ -62,6 +63,9 @@ Route::middleware('auth')->group(function () {
     // Booking success and cance routes
     Route::get('/booking/success/{booking}', [BookingController::class, 'success'])->name('booking.success');
     Route::get('/booking/cancel', [BookingController::class, 'cancel'])->name('booking.cancel');
+    Route::get('/my-appointments', \App\Livewire\UserAppointments::class)->name('user.appointments');
+
+    
 });
 
 Route::get('/orders/{id}/receipt', [OrderController::class, 'downloadReceipt'])->name('orders.receipt');

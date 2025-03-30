@@ -18,6 +18,7 @@ class Booking extends Model
         'slot_id',
         'payment_method',
         'status',
+        'appointment_status',
     ];
 
     public function slot()

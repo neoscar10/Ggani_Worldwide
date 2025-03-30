@@ -8,7 +8,7 @@
 
 
 
-        <title>{{ $title ?? 'gadjo' }}</title>
+        <title>{{ $title ?? 'Ggani-Worldwide' }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
 

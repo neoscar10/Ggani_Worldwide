@@ -60,12 +60,14 @@ namespace App\Models{
  * @property int $slot_id
  * @property string $payment_method
  * @property string $status
+ * @property string $appointment_status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\TimeSlot $slot
  * @method static \Illuminate\Database\Eloquent\Builder|Booking newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Booking newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Booking query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Booking whereAppointmentStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Booking whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Booking whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Booking whereFirstName($value)

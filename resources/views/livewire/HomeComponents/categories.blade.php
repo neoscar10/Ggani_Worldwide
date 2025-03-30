@@ -14,10 +14,9 @@
           </div>
         </div>
         <p class="mb-12 text-base text-center text-gray-500">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
-          Pariatur
-          numquam, odio quod nobis ipsum ex cupiditate?
-        </p>
+          Explore our wide range of tennis equipment, from high-performance rackets and premium balls to top-quality apparel and accessories. Find everything you need to elevate your game.
+      </p>
+      
       </div>
     </div>
   
