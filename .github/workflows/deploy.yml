@@ -66,6 +66,7 @@ jobs:
           local-dir: ./
           exclude: |
             **/.git*
+            
             **/node_modules/**
             **/vendor/**
             **/storage/**
