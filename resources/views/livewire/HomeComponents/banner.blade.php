@@ -26,7 +26,7 @@
       <!-- End Col -->
 
       <div class="relative ms-1">
-        <img class="w-full max-h-[100vh] object-contain rounded-md mt-7" src="{{url('storage', 'hero_image.png')}}" alt="Tennis hero image">
+        <img class="w-full max-h-[100vh] object-contain rounded-md mt-7" src="{{asset('storage/' . 'hero_image.png')}}" alt="Tennis hero image">
         <div class="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 w-full h-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6"></div>
       </div>
       <!-- End Col -->

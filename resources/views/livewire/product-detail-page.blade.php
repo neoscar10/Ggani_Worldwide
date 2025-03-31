@@ -10,8 +10,8 @@
               </div>
               <div class="flex-wrap hidden md:flex ">
                 @foreach ($product->images as $image)
-                  <div class="w-1/2 p-2 sm:w-1/4" x-on:click="mainImage='{{url('storage', $image)}}'">
-                    <img src="{{url('storage', $image)}}" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-green-500">
+                  <div class="w-1/2 p-2 sm:w-1/4" x-on:click="mainImage='{{asset('storage/' . $image)}}'">
+                    <img src="{{asset('storage/' . $image)}}" alt="" class="object-cover w-full lg:h-20 cursor-pointer hover:border hover:border-green-500">
                   </div>
                 @endforeach
   

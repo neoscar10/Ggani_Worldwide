@@ -151,7 +151,7 @@
               <tr wire:key="{{$item->id}}">
                 <td class="py-4">
                   <div class="flex items-center">
-                    <img class="h-16 w-16 mr-4" src="{{url('storage', $item->product->images[0])}}" alt="{{$item->product->name}}">
+                    <img class="h-16 w-16 mr-4" src="{{asset('storage/' . $item->product->images[0])}}" alt="{{$item->product->name}}">
                     <span class="font-semibold">{{$item->product->name}}</span>
                   </div>
                 </td>

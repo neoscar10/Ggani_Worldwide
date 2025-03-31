@@ -21,7 +21,7 @@
               <tr wire:key="{{$item['product_id']}}">
                 <td class="py-4">
                   <div class="flex items-center">
-                    <img class="h-16 w-16 mr-4" src="{{url('storage', $item['image'])}}" alt="Product image">
+                    <img class="h-16 w-16 mr-4" src="{{asset('storage/' . $item['image'])}}" alt="Product image">
                     <span class="font-semibold">{{$item['name']}}</span>
                   </div>
                 </td>
@@ -63,7 +63,7 @@
             <div wire:key="{{$item['product_id']}}" class="p-4 border rounded-lg shadow-sm bg-gray-50">
               <!-- First Row: Product Image and Name (Same Row Now) -->
               <div class="flex items-center gap-4">
-                <img class="h-16 w-16 object-cover rounded" src="{{url('storage', $item['image'])}}" alt="Product image">
+                <img class="h-16 w-16 object-cover rounded" src="{{asset('storage/' . $item['image'])}}" alt="Product image">
                 <span class="font-semibold text-md">{{$item['name']}}</span>
               </div>
               
