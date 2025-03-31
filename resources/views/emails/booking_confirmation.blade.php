@@ -16,6 +16,6 @@
         <li><strong>Status:</strong> {{ ucfirst($booking->status) }}</li>
         <li><strong>Booking ID:</strong> {{ ucfirst($booking->id) }}</li>
     </ul>
-    <p>We look forward to seeing you soon!</p>
+    <p>We look forward to seeing you!</p>
 </body>
 </html>
