@@ -30,14 +30,8 @@ jobs:
         with:
           php-version: "8.2"
 
-      - name: Copy .env
-        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-
       - name: Install Dependencies
-        run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-
-      - name: Generate Key
-        run: php artisan key:generate
+        run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --no-dev
 
       - name: Clear Config and Cache
         run: |
@@ -67,10 +61,11 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /
           local-dir: ./
-          dangerous-clean-slate: true
           exclude: |
             **/.git*
             **/node_modules/**
             **/vendor/**
             **/tests/**
-         
+            .env
+            storage/*
+            bootstrap/cache/*
