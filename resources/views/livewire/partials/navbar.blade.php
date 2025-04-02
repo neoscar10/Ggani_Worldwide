@@ -64,7 +64,9 @@
                 {{-- <a wire:navigate href="" class="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition">👤 Profile</a>
                 <a wire:navigate href="/settings" class="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition">⚙️ Settings</a> --}}
                 <a wire:navigate href="/my-orders" class="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition">📦 My Orders</a>
+                <a wire:navigate href="{{url('/my-appointments')}}" class="block px-4 py-3 text-sm hover:bg-red-50 hover:text-red-700 transition">📅 My appointments</a>
                 <a wire:navigate href="/logout" class="block px-4 py-3 text-sm text-red-600 hover:bg-red-50 hover:text-red-700 transition">🚪 Logout</a>
+                
               </div>
 
             </div>
