@@ -30,7 +30,7 @@ class LatestOrders extends BaseWidget
 
                 TextColumn::make('grand_total')
                 ->label('Order Total')
-                ->money('NGN'),
+                ->money('USD'),
 
                 TextColumn::make('status')
                 ->badge()
