@@ -24,6 +24,7 @@ use Illuminate\Support\Str;
 use Filament\Forms\Set;
 use Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
+use App\Models\Brand;
 
 
 
@@ -39,6 +40,14 @@ class ProductResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
 
+    // Taking out brand selection
+    public static function mutateFormDataBeforeCreate(array $data): array
+    {
+        $gganiBrand = Brand::firstOrCreate(['name' => 'ggani']);
+        $data['brand_id'] = $gganiBrand->id;
+
+        return $data;
+    }
     public static function form(Form $form): Form
     {
         return $form
@@ -87,11 +96,13 @@ class ProductResource extends Resource
                     ->preload()
                     ->relationship('category', 'name'),
 
-                    Select::make('brand_id')
-                    ->required()
-                    ->searchable()
-                    ->preload()
-                    ->relationship('brand', 'name'),
+                Select::make('brand_id')
+                    ->label('Brand')
+                    ->options(Brand::all()->pluck('name', 'id'))
+                    ->default(function () {
+                        return Brand::where('name', 'ggani')->value('id');
+                    })
+                    ->required(),
                   ]),
 
                   Section::make('Status')->schema([
@@ -125,8 +136,8 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('category.name')
                 ->sortable(),
 
-                Tables\Columns\TextColumn::make('brand.name')
-                ->sortable(),
+                // Tables\Columns\TextColumn::make('brand.name')
+                // ->sortable(),
 
                 Tables\Columns\TextColumn::make('price')
                 ->money('USD')

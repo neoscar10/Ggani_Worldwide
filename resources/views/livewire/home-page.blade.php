@@ -1,7 +1,9 @@
 <div>
     @include('livewire.HomeComponents.banner')
       {{-- BRAND SECTION START --}}
-    @include('livewire.HomeComponents.brand-section')
+
+      {{-- Disabled brand section to not display on the home page --}}
+    {{-- @include('livewire.HomeComponents.brand-section') --}}
       {{-- BRAND SECTION END --}}
 
       {{-- CATEGORIES SECTION START --}}

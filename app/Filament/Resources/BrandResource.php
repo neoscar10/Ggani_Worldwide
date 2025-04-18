@@ -29,6 +29,12 @@ class BrandResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-computer-desktop';
 
+    // Hide this resource from the navigation sidebar
+    protected static bool $shouldRegisterNavigation = false;
+
+
+
+    
     public static function form(Form $form): Form
     {
         return $form

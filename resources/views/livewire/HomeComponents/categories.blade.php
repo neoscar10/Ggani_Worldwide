@@ -20,7 +20,7 @@
       </div>
     </div>
   
-    <div class="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
+    <div class="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto mb-6" >
       <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
   
         @foreach ($categories as $category)
